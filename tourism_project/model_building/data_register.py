@@ -7,7 +7,7 @@ df = pd.read_csv(RAW_PATH)
 
 # Validate that key expected columns are present
 expected_columns = [
-    "CustomerID", "ProdTaken", "Age", "TypeofContact", 
+    "CustomerID", "ProdTaken", "Age", "TypeofContact",
     "CityTier", "DurationOfPitch", "Occupation", "Gender",
     "MaritalStatus", "Designation", "MonthlyIncome"
 ]
