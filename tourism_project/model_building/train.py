@@ -62,13 +62,13 @@ with mlflow.start_run():
 
     mlflow.log_params(grid_search.best_params_)
     best_model = grid_search.best_estimator_
-    
+
     classification_threshold = 0.45
     y_pred_test_proba = best_model.predict_proba(Xtest)[:, 1]
     y_pred_test = (y_pred_test_proba >= classification_threshold).astype(int)
 
     test_report = classification_report(ytest, y_pred_test, output_dict=True)
-    
+
     mlflow.log_metrics({
         "test_accuracy": test_report["accuracy"],
         "test_precision": test_report["1"]["precision"],
